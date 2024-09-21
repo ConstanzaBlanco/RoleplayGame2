@@ -1,6 +1,6 @@
 ﻿namespace Ucu.Poo.RoleplayGame;
 
-public class Staff
+public class Staff:Items
 {
     public string Name { get; }
     public int Defenselevel { get; }

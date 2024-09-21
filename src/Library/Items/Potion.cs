@@ -1,6 +1,6 @@
 ﻿namespace Ucu.Poo.RoleplayGame;
 
-public class Potion
+public class Potion:Items
 {
     public string Name { get; }
     public int Defenselevel { get; }

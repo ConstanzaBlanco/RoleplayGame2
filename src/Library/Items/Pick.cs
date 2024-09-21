@@ -1,6 +1,6 @@
 ﻿namespace Ucu.Poo.RoleplayGame;
 
-public class Pick
+public class Pick:Items
 {
     public string Name { get; }
     public int Defenselevel { get; }

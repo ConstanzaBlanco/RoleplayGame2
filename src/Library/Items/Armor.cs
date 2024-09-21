@@ -1,6 +1,6 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class armor
+public class armor:Items
 {
     public string Name { get; }
 
