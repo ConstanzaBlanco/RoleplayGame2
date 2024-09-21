@@ -1,20 +1,28 @@
-namespace Ucu.Poo.RoleplayGame;
+﻿namespace Ucu.Poo.RoleplayGame;
 
 public class Staff
 {
-    public int AttackValue 
+    public string Name { get; }
+    public int Defenselevel { get; }
+    public int AttackLevel { get; set; }
+    public int HealthLevel { get; }
+    public bool IsMagic { get; }
+    
+    public Staff(string name)
     {
-        get
-        {
-            return 100;
-        } 
+        this.Name = name;
+        this.IsMagic = true;
+        this.Defenselevel = 0;
+        this.HealthLevel = 0;
+        this.AttackLevel = 15;
     }
-
-    public int DefenseValue
+    public int GetAttack()
     {
-        get
+        if (this.AttackLevel<30)
         {
-            return 100;
+            this.AttackLevel += 5;
         }
+
+        return this.AttackLevel;
     }
 }
