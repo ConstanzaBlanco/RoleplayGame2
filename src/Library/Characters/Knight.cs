@@ -15,7 +15,7 @@ public class Knight
 
     public Shield Shield { get; set; }
 
-    public Armor Armor { get; set; }
+    public armor Armor { get; set; }
 
     public int AttackValue
     {

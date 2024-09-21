@@ -19,7 +19,7 @@ public class Wizard
     {
         get
         {
-            return SpellsBook.AttackValue + Staff.AttackValue;
+            return SpellsBook.AttackValue + Staff.AttackLevel;
         }
     }
 
@@ -27,7 +27,7 @@ public class Wizard
     {
         get
         {
-            return SpellsBook.DefenseValue + Staff.DefenseValue;
+            return SpellsBook.DefenseValue + Staff.Defenselevel;
         }
     }
 
