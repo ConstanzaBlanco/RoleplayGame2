@@ -29,7 +29,7 @@ public class Dwarf
     {
         get
         {
-            return Shield.DefenseValue + Helmet.DefenseValue;
+            return Shield.Defenselevel + Helmet.DefenseValue;
         }
     }
 

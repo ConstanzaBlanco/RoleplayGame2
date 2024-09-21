@@ -21,7 +21,7 @@ public class Knight
     {
         get
         {
-            return Sword.AttackValue;
+            return Sword.AttackLevel;
         }
     }
 
@@ -29,7 +29,7 @@ public class Knight
     {
         get
         {
-            return Armor.DefenseValue + Shield.DefenseValue;
+            return Armor.Defenselevel + Shield.Defenselevel;
         }
     }
 

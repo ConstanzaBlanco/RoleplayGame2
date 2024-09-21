@@ -1,12 +1,19 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Armor
+public class armor
 {
-    public int DefenseValue
+    public string Name { get; }
+    public int Defenselevel { get; }
+    public int AttackLevel { get; }
+    public int HealthLevel { get; }
+    public bool IsMagic { get; }
+
+    public armor(string name)
     {
-        get
-        {
-            return 25;
-        }
+        this.Name = name;
+        this.Defenselevel = 60;
+        this.AttackLevel = 0;
+        this.HealthLevel = 0;
+        this.IsMagic = false;
     }
 }

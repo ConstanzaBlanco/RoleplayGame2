@@ -10,7 +10,7 @@ gandalf.SpellsBook = book;
 Dwarf gimli = new Dwarf("Gimli");
 gimli.Axe = new Axe();
 gimli.Helmet = new Helmet();
-gimli.Shield = new Shield();
+gimli.Shield = new Shield("escudo");
 
 Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
 Console.WriteLine($"Gandalf attacks Gimli with ⚔️ {gandalf.AttackValue}");

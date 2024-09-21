@@ -19,7 +19,7 @@ public class Archer
     {
         get
         {
-            return Bow.AttackValue;
+            return Bow.AttackLevel;
         }
     }
 
