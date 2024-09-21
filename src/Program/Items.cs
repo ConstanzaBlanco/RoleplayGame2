@@ -3,9 +3,9 @@
 public interface Items
 {
     public string name { get; }
-    public int Defenslevel { get; }
+    public int Defenselevel { get; }
     public int AttackLevel { get; }
-    public string HealthLevel { get; }
+    public int HealthLevel { get; }
     public bool IsMagic { get; }
 
 }
