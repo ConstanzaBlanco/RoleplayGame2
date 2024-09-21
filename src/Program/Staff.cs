@@ -16,11 +16,7 @@ public class Staff
         this.HealthLevel = 0;
         this.AttackLevel = 15;
     }
-    public int Danio
-    {
-        get {return this.AttackLevel; }
-    }    
-    public int GetAtaque()
+    public int GetAttack()
     {
         if (this.AttackLevel<30)
         {
