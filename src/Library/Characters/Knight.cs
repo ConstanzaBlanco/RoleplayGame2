@@ -67,7 +67,7 @@ public class Knight : ICharacter
                 }
                 else if (defender.DefenseLevel <= ActualAttack)
                 {
-                    defender.HealthLevel -= AttackLevel - defender.DefenseLevel;
+                    defender.HealthLevel -= ActualAttack - defender.DefenseLevel;
                     defender.DefenseLevel = 0;
                     Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.Name}, perdiendo totalmente su defensa"); 
                 }

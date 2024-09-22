@@ -4,7 +4,6 @@ public class Sword:IItem
 {
     public string Name { get; }
     public int DefenseLevel { get; }
-
     public int AttackLevel
     {
         get
@@ -12,7 +11,6 @@ public class Sword:IItem
             return 25;
         }
     }
-
     public int HealthLevel { get; }
     public bool IsMagic { get; }
 

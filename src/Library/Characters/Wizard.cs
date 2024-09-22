@@ -65,7 +65,7 @@ public class Wizard : ICharacter
                 }
                 else if (defender.DefenseLevel <= ActualAttack)
                 {
-                    defender.HealthLevel -= AttackLevel - defender.DefenseLevel;
+                    defender.HealthLevel -= ActualAttack - defender.DefenseLevel;
                     defender.DefenseLevel = 0;
                     Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.Name}, perdiendo totalmente su defensa"); 
                 }
@@ -101,6 +101,10 @@ public class Wizard : ICharacter
     {
         int ActualHeal = item.HealthLevel;
         HealthLevel += ActualHeal;
+        if (HealthLevel > 120)
+        {
+            HealthLevel = 120;
+        }
     }
 
     public void PrintStatus()
