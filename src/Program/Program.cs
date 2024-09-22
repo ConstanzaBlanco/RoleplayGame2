@@ -1,27 +1,23 @@
 ﻿using RoleplayGame2;
 using Ucu.Poo.RoleplayGame;
 
-Book LibritoDeSabiduria = new Book("Todo lo sabe");
+IItem LibritoDeSabiduria = new Book("Todo lo sabe");
 LibritoDeSabiduria.AddSpell("Adaba cadabra");
 
 Wizard gandalf = new Wizard("Gandalf");
 //gandalf.Staff = new Staff();
 gandalf.AddItem(LibritoDeSabiduria);
+gandalf.PrintStatus();
 
 Dwarf gimli = new Dwarf("Gimli");
-gimli.Axe = new Axe();
-gimli.Helmet = new Helmet();
+gimli.AddItem(LibritoDeSabiduria);
+IItem EscudoDeHierro = new Shield("Hierro");
+gimli.AddItem(EscudoDeHierro);
+gimli.PrintStatus();
 
-gimli.Shield = new Shield("escudo");
+Console.WriteLine("-----------------------------");
 
-Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
-Console.WriteLine($"Gandalf attacks Gimli with ⚔️ {gandalf.AttackValue}");
+gandalf.Attack(LibritoDeSabiduria, gimli);
+gimli.PrintStatus();
 
-gimli.ReceiveAttack(gandalf.AttackValue);
-
-Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
-
-gimli.Cure();
-
-Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
 

@@ -25,4 +25,8 @@ public class Staff: IItem
 
         return this.AttackLevel;
     }
+    public void AddSpell(string name)
+    {
+        throw new NotImplementedException();
+    }
 }

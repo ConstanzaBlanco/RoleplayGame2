@@ -11,11 +11,11 @@ namespace TestProject1
         public void AtacarTest()
         {
             // Inicialización de personajes
-            Knight caballero1 = new Knight("PrincipeEncantador");  // Vida inicial: 90
-            Wizard mago1 = new Wizard("Voldemort"); // Vida inicial: 80
-            Shield escudo = new Shield("escudocap"); 
-            Potion pocion = new Potion("Curativa"); 
-            Staff baston = new Staff("Báculo");
+            ICharacter caballero1 = new Knight("PrincipeEncantador");  // Vida inicial: 90
+            ICharacter mago1 = new Wizard("Voldemort"); // Vida inicial: 80
+            IItem escudo = new Shield("escudocap"); 
+            IItem pocion = new Potion("Curativa"); 
+            IItem baston = new Staff("Báculo");
             mago1.AddItem(pocion);
             mago1.AddItem(baston);
             caballero1.AddItem(escudo);
@@ -30,11 +30,11 @@ namespace TestProject1
         [Test]
         public void Defender()
         {
-            Archer arquero1 = new Archer("Hawkeye");  // Vida inicial: 110
-            Wizard mago1 = new Wizard("Voldemort"); // Vida inicial: 80
-            Shield escudo = new Shield("escudocap"); 
-            Potion pocion = new Potion("Curativa"); 
-            Staff baston = new Staff("Báculo");
+            ICharacter arquero1 = new Archer("Hawkeye");  // Vida inicial: 110
+            ICharacter mago1 = new Wizard("Voldemort"); // Vida inicial: 80
+            IItem escudo = new Shield("escudocap"); 
+            IItem pocion = new Potion("Curativa"); 
+            IItem baston = new Staff("Báculo");
             mago1.AddItem(pocion);
             mago1.AddItem(baston);
             arquero1.AddItem(escudo);
@@ -50,11 +50,11 @@ namespace TestProject1
         public void CurarTest()
         {
             // Inicialización de personajes
-            Dwarf elfo1 = new Dwarf("Zelda"); // Vida inicial: 120
-            Wizard mago1 = new Wizard("Voldemort"); // Vida inicial: 80
-            Sword espada = new Sword("Zenith"); 
-            Potion pocion = new Potion("Curativa"); 
-            Staff baston = new Staff("Báculo");
+            ICharacter elfo1 = new Dwarf("Zelda"); // Vida inicial: 120
+            ICharacter mago1 = new Wizard("Voldemort"); // Vida inicial: 80
+            IItem espada = new Sword("Zenith"); 
+            IItem pocion = new Potion("Curativa"); 
+            IItem baston = new Staff("Báculo");
             mago1.AddItem(pocion);
             mago1.AddItem(baston);
             elfo1.AddItem(espada);
@@ -70,7 +70,7 @@ namespace TestProject1
         [Test]
         public void CurarMaximoTest()
         {
-            Wizard mago1 = new Wizard("Voldemort"); // Vida inicial: 80
+            ICharacter mago1 = new Wizard("Voldemort"); // Vida inicial: 80
             Potion pocion = new Potion("Curativa"); 
             mago1.AddItem(pocion);
 

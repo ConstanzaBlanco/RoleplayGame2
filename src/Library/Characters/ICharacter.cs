@@ -16,5 +16,6 @@ public interface ICharacter
     public void RemoveItem(IItem item);
     public void Attack(IItem item, ICharacter defender);
     public void Defense(IItem item);
+    public void Heal(IItem item);
     public void PrintStatus();
 }

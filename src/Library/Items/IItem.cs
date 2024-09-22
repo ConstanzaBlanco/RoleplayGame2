@@ -8,4 +8,5 @@ public interface IItem
     int HealthLevel { get; }
     bool IsMagic { get; }
 
+    void AddSpell(string name);
 }

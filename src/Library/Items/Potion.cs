@@ -16,4 +16,8 @@ public class Potion: IItem
         this.HealthLevel = 30;
         this.AttackLevel = 0;
     }
+    public void AddSpell(string name)
+    {
+        throw new NotImplementedException();
+    }
 }

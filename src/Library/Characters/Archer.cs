@@ -50,7 +50,7 @@ public class Archer : ICharacter
         {
             ActualAttack = AttackLevel;
         }
-        if (name == defender.name)
+        if (this == defender)
         {
             Console.WriteLine($"No es posible que {name} se ataque a si mismo");
         }
@@ -104,7 +104,7 @@ public class Archer : ICharacter
     public void PrintStatus()
     {
         Console.WriteLine($"El personaje {name} tiene las siguientes caracteristicas:");
-        Console.WriteLine($"Es de tipo: {this.GetType().ToString()}");
+        Console.WriteLine($"Es de tipo: {this.GetType().Name}");
         Console.WriteLine($"Tiene actualmente {HealthLevel} de vida");
         Console.WriteLine($"Tiene actualmente {AttackLevel} de daño físico base");
         Console.WriteLine($"Tiene actualmente {DefenseLevel} de defensa");
@@ -113,5 +113,10 @@ public class Archer : ICharacter
             Console.WriteLine($"Tiene a su disposición el item: {item.Name}");
         }
         Console.WriteLine("");
+    }
+
+    public void Heal(IItem item)
+    {
+        throw new NotImplementedException();
     }
 }

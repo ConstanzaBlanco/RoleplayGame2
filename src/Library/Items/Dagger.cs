@@ -23,4 +23,9 @@ public class Dagger :IItem
         this.HealthLevel = 0;
         this.IsMagic = false;
     }
+
+    public void AddSpell(string missing_name)
+    {
+        throw new NotImplementedException();
+    }
 }

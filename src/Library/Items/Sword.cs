@@ -21,4 +21,8 @@ public class Sword:IItem
         this.HealthLevel = 0;
         this.IsMagic = false;
     }
+    public void AddSpell(string name)
+    {
+        throw new NotImplementedException();
+    }
 }

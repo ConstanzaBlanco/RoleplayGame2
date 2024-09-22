@@ -1,6 +1,6 @@
 ﻿namespace Ucu.Poo.RoleplayGame;
 
-public class Book
+public class Book : IItem
 {
     public string Name { get; }
     public int DefenseLevel { get; set; }

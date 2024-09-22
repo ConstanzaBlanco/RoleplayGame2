@@ -16,4 +16,9 @@ public class Pick:IItem
         this.HealthLevel = 0;
         this.AttackLevel = 40;
     }
+
+    public void AddSpell(string name)
+    {
+        throw new NotImplementedException();
+    }
 }
