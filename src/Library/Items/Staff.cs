@@ -1,9 +1,9 @@
 ﻿namespace Ucu.Poo.RoleplayGame;
 
-public class Staff:Items
+public class Staff: IItem
 {
     public string Name { get; }
-    public int Defenselevel { get; }
+    public int DefenseLevel { get; }
     public int AttackLevel { get; set; }
     public int HealthLevel { get; }
     public bool IsMagic { get; }
@@ -12,7 +12,7 @@ public class Staff:Items
     {
         this.Name = name;
         this.IsMagic = true;
-        this.Defenselevel = 0;
+        this.DefenseLevel = 0;
         this.HealthLevel = 0;
         this.AttackLevel = 15;
     }

@@ -3,7 +3,7 @@
 public class Book
 {
     public string Name { get; }
-    public int Defenselevel { get; set; }
+    public int DefenseLevel { get; set; }
     public int AttackLevel { get; set; }
     public int HealthLevel { get; }
     public bool IsMagic { get; }
@@ -14,7 +14,7 @@ public class Book
     {
         this.Name = name;
         this.IsMagic = true;
-        this.Defenselevel = 5;
+        this.DefenseLevel = 5;
         this.HealthLevel = 0;
         this.AttackLevel = 15;
     }
@@ -28,11 +28,11 @@ public class Book
     public int GetDefense()
     {
         int cant_spells = Spells.Count;
-        this.Defenselevel += cant_spells;
-        return this.Defenselevel;
+        this.DefenseLevel += cant_spells;
+        return this.DefenseLevel;
     }
 
-    public void AgregarHechizos(string hechizo)
+    public void AddSpell(string hechizo)
     {
         Spells.Add(hechizo);
     }

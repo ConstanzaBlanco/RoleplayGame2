@@ -1,3 +1,5 @@
+using Ucu.Poo.RoleplayGame;
+
 namespace RoleplayGame2;
 
 public class Dwarf : ICharacter
@@ -61,24 +63,24 @@ public class Dwarf : ICharacter
                     defender.DefenseLevel = 0;
                     defender.HealthLevel = 0;
                     defender.IsAlive = false;
-                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.name}"); // aca falta sacar el nombre
+                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.Name}"); // aca falta sacar el nombre
                     Console.WriteLine($"{defender.name} ha muerto por {name}");
                 }
                 else if (defender.DefenseLevel <= ActualAttack)
                 {
                     defender.HealthLevel -= AttackLevel - defender.DefenseLevel;
                     defender.DefenseLevel = 0;
-                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.name}, perdiendo totalmente su defensa"); 
+                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.Name}, perdiendo totalmente su defensa"); 
                 }
                 else if (defender.DefenseLevel > ActualAttack)
                 {
                     defender.DefenseLevel -= AttackLevel;
-                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.name},pero su defensa no se ha roto");
+                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.Name},pero su defensa no se ha roto");
                 }
             }
             else
             {
-                Console.WriteLine($"{name} no tiene el item {item.name}, pero golpea con su punio");
+                Console.WriteLine($"{name} no tiene el item {item.Name}, pero golpea con su punio");
             }
         }
     }
@@ -108,7 +110,7 @@ public class Dwarf : ICharacter
         Console.WriteLine($"Tiene actualmente {DefenseLevel} de defensa");
         foreach (IItem item in Inventory)
         {
-            Console.WriteLine($"Tiene a su disposición el item: {item.name}");
+            Console.WriteLine($"Tiene a su disposición el item: {item.Name}");
         }
         Console.WriteLine("");
     }

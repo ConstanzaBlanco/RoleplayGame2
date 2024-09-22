@@ -1,9 +1,9 @@
 ﻿namespace Ucu.Poo.RoleplayGame;
 
-public class Potion:Items
+public class Potion: IItem
 {
     public string Name { get; }
-    public int Defenselevel { get; }
+    public int DefenseLevel { get; }
     public int AttackLevel { get; }
     public int HealthLevel { get; }
     public bool IsMagic { get; }
@@ -12,7 +12,7 @@ public class Potion:Items
     {
         this.Name = name;
         this.IsMagic = true;
-        this.Defenselevel = 0;
+        this.DefenseLevel = 0;
         this.HealthLevel = 30;
         this.AttackLevel = 0;
     }

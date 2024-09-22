@@ -1,10 +1,10 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Shield:Items
+public class Shield: IItem
 {
     public string Name { get; }
 
-    public int Defenselevel
+    public int DefenseLevel
     {
         get
         {

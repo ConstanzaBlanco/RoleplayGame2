@@ -1,10 +1,10 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class armor:Items
+public class armor: IItem
 {
     public string Name { get; }
 
-    public int Defenselevel
+    public int DefenseLevel
     {
         get
         {

@@ -1,4 +1,7 @@
-﻿namespace RoleplayGame2;
+﻿using Ucu.Poo.RoleplayGame;
+
+namespace RoleplayGame2;
+
 
 public interface ICharacter
 {

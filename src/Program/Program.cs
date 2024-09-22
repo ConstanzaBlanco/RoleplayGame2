@@ -1,15 +1,17 @@
-﻿using Ucu.Poo.RoleplayGame;
+﻿using RoleplayGame2;
+using Ucu.Poo.RoleplayGame;
 
-SpellsBook book = new SpellsBook();
-book.Spells = new Spell[]{ new Spell() };
+Book LibritoDeSabiduria = new Book("Todo lo sabe");
+LibritoDeSabiduria.AddSpell("Adaba cadabra");
 
 Wizard gandalf = new Wizard("Gandalf");
 //gandalf.Staff = new Staff();
-gandalf.SpellsBook = book;
+gandalf.AddItem(LibritoDeSabiduria);
 
 Dwarf gimli = new Dwarf("Gimli");
 gimli.Axe = new Axe();
 gimli.Helmet = new Helmet();
+
 gimli.Shield = new Shield("escudo");
 
 Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
