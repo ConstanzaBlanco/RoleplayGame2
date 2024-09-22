@@ -7,11 +7,11 @@ public interface ICharacter
     public int AttackLevel { get; set; }
     public int DefenseLevel { get; set; }
     public bool IsAlive { get; set; }
-    public List<IItems> Inventory { get; set; }
+    public List<IItem> Inventory { get; set; }
 
     public void AddItem(IItem item);
     public void RemoveItem(IItem item);
-    public void Attack(IItem item, ICharacter personaje1);
+    public void Attack(IItem item, ICharacter defender);
     public void Defense(IItem item);
     public void PrintStatus();
 }
