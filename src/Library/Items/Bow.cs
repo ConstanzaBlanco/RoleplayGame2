@@ -4,25 +4,21 @@ public class Bow:IItem
 {
     private string Name { get; }
     public int DefenseLevel { get; set; }
-    private int flechas;
-    private int danio;
+    private int Arrows;
+    private int AttackLevelWithArrow;
     private int AttackLevel { get; set; }
     private int HealthLevel { get; set; }
     private bool IsMagic { get; }
     public int GetAttack()
     {
-        if (this.flechas>0)
+        if (this.Arrows>0)
         {
-            this.flechas -= 1;
-            Console.WriteLine($"Le quedan {this.flechas} flechas");
+            this.Arrows -= 1;
+            Console.WriteLine($"Le quedan {this.Arrows} flechas");
+            return this.AttackLevelWithArrow;
         }
-        if(this.flechas<=0)
-        {
-            this.danio = 0;
-            Console.WriteLine($"Ya no le quedan flechas, utiliza unicamente su Arco");
-        }
-        
-        return this.danio;
+        Console.WriteLine($"Ya no le quedan flechas, utiliza unicamente su Arco");
+        return this.AttackLevel;
     }
     public int GetDefense()
     {
@@ -49,9 +45,9 @@ public class Bow:IItem
         this.Name = name;
         this.DefenseLevel = 0;
         this.HealthLevel = 0;
-        this.AttackLevel = 30;
-        this.danio = 30;
-        this.flechas = 3;
+        this.AttackLevel = 20;
+        this.AttackLevelWithArrow = 30;
+        this.Arrows = 3;
         this.IsMagic = false;
     }
 
