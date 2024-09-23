@@ -3,7 +3,7 @@ namespace Ucu.Poo.RoleplayGame;
 public class armor: IItem
 {
     private string Name { get; }
-    private int usos;
+    private int Uses;
     private int DefenseLevel { get; set; }
     private int AttackLevel { get; set; }
     private int HealthLevel { get; set; }
@@ -26,10 +26,10 @@ public class armor: IItem
 
     public int GetDefense()
     {
-        if (this.usos <= 2)
+        if (this.Uses <= 2)
         {
             this.DefenseLevel -= 20;
-            this.usos += 1;
+            this.Uses += 1;
         }
         
         if (this.DefenseLevel <= 0)
@@ -52,7 +52,7 @@ public class armor: IItem
         this.AttackLevel = 0;
         this.HealthLevel = 0;
         this.DefenseLevel = 60;
-        this.usos = 0;
+        this.Uses = 0;
         this.IsMagic =false;
     }
 }

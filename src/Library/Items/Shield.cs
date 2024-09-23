@@ -2,7 +2,7 @@ namespace Ucu.Poo.RoleplayGame;
 
 public class Shield : IItem
 {
-    private string name;
+    private string Name;
     private int DefenseLevel { get; set; }
     private int AttackLevel { get; set; }
     private int HealthLevel { get; set; }
@@ -10,7 +10,7 @@ public class Shield : IItem
 
     public Shield(string name)
     {
-        this.name = name;
+        this.Name = name;
         this.IsMagic = false;
         this.DefenseLevel = 30;
         this.HealthLevel = 0;
@@ -29,7 +29,7 @@ public class Shield : IItem
 
     public string GetName()
     {
-        return this.name;
+        return this.Name;
     }
 
     public int GetHealth()

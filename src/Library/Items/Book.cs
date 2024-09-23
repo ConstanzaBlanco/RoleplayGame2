@@ -2,7 +2,7 @@
 //El libro implementa ambas interfeces para poder tener las caracteristicas de un libro y de un item
 public class Book : IItem, IBook
 {
-    private string name;
+    private string Name;
     private int DefenseLevel { get; set; }
     public int AttackLevel { get; set; }
     public int HealthLevel { get; set; }
@@ -12,7 +12,7 @@ public class Book : IItem, IBook
     
     public Book(string name)
     {
-        this.name = name;
+        this.Name = name;
         this.IsMagic = true;
         this.DefenseLevel = 5;
         this.HealthLevel = 5;
@@ -40,7 +40,7 @@ public class Book : IItem, IBook
     }
     public string GetName()
     {
-        return this.name;
+        return this.Name;
     }
 
     public int GetHealth()

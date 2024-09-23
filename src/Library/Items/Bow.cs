@@ -2,7 +2,7 @@ namespace Ucu.Poo.RoleplayGame;
 
 public class Bow:IItem
 {
-    private string name { get; }
+    private string Name { get; }
     public int DefenseLevel { get; set; }
     private int flechas;
     private int danio;
@@ -36,7 +36,7 @@ public class Bow:IItem
 
     public string GetName()
     {
-        return this.name;
+        return this.Name;
     }
     
     public bool GetIsMagic()
@@ -46,7 +46,7 @@ public class Bow:IItem
 
     public Bow(string name)
     {
-        this.name = name;
+        this.Name = name;
         this.DefenseLevel = 0;
         this.HealthLevel = 0;
         this.AttackLevel = 30;

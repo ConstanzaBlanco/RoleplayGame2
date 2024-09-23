@@ -2,7 +2,7 @@
 
 public class Pick : IItem
 {
-    private string name;
+    private string Name;
     private int DefenseLevel { get; set; }
     private int AttackLevel { get; set; }
     private int HealthLevel { get; set; }
@@ -10,7 +10,7 @@ public class Pick : IItem
 
     public Pick(string name)
     {
-        this.name = name;
+        this.Name = name;
         this.IsMagic = false;
         this.DefenseLevel = 0;
         this.HealthLevel = 0;
@@ -29,7 +29,7 @@ public class Pick : IItem
 
     public string GetName()
     {
-        return this.name;
+        return this.Name;
     }
 
     public int GetHealth()

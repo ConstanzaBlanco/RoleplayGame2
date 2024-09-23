@@ -3,7 +3,7 @@ namespace Ucu.Poo.RoleplayGame;
 
 public class Dagger :IItem
 {
-    private string name { get; }
+    private string Name { get; }
     private int DefenseLevel { get; set; }
 
     private int AttackLevel;
@@ -12,7 +12,7 @@ public class Dagger :IItem
 
     public Dagger(string name)
     {
-        this.name = name;
+        this.Name = name;
         this.DefenseLevel = 0;
         this.HealthLevel = 0;
         this.AttackLevel = 20;
@@ -35,7 +35,7 @@ public class Dagger :IItem
 
     public string GetName()
     {
-        return this.name;
+        return this.Name;
     }
     
     public bool GetIsMagic()
