@@ -2,18 +2,17 @@
 
 public class Book : IItem, IBook
 {
-    public string Name { get; }
-    public int DefenseLevel 
-    { get; set; }
+    private string name;
+    private int DefenseLevel { get; set; }
     public int AttackLevel { get; set; }
-    public int HealthLevel { get; }
+    public int HealthLevel { get; set; }
     public bool IsMagic { get; }
     
     public List<String> Spells { get; }
     
     public Book(string name)
     {
-        this.Name = name;
+        this.name = name;
         this.IsMagic = true;
         this.DefenseLevel = 5;
         this.HealthLevel = 0;
@@ -38,5 +37,19 @@ public class Book : IItem, IBook
     public void AddSpell(string hechizo)
     {
         Spells.Add(hechizo);
+    }
+    public string GetName()
+    {
+        return this.name;
+    }
+
+    public int GetHealth()
+    {
+        return this.HealthLevel;
+    }
+    
+    public bool GetIsMagic()
+    {
+        return this.IsMagic;
     }
 }

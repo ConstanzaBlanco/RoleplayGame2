@@ -29,7 +29,7 @@ public class Dwarf : ICharacter
 
     public void AddItem(IItem item)
     {
-        if (!item.isMagic)
+        if (!item.GetIsMagic())
         {
             inventory.Add(item);
         }
@@ -45,7 +45,7 @@ public class Dwarf : ICharacter
 
     public void Attack(IItem item, ICharacter defender)
     {
-        int ActualAttack = item.attackLevel;
+        int ActualAttack = item.GetAttack();
         if (ActualAttack == 0)
         {
             ActualAttack = attackLevel;
@@ -63,24 +63,24 @@ public class Dwarf : ICharacter
                     defender.defenseLevel = 0;
                     defender.healthLevel = 0;
                     defender.isAlive = false;
-                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.name}"); // aca falta sacar el nombre
+                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.GetName()}"); // aca falta sacar el nombre
                     Console.WriteLine($"{defender.name} ha muerto por {name}");
                 }
                 else if (defender.defenseLevel <= ActualAttack)
                 {
                     defender.healthLevel -= ActualAttack - defender.defenseLevel;
                     defender.defenseLevel = 0;
-                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.name}, perdiendo totalmente su defensa"); 
+                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.GetName()}, perdiendo totalmente su defensa"); 
                 }
                 else if (defender.defenseLevel > ActualAttack)
                 {
                     defender.defenseLevel -= attackLevel;
-                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.name},pero su defensa no se ha roto");
+                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.GetName()},pero su defensa no se ha roto");
                 }
             }
             else
             {
-                Console.WriteLine($"{name} no tiene el item {item.name}, pero golpea con su punio");
+                Console.WriteLine($"{name} no tiene el item {item.GetName()}, pero golpea con su punio");
             }
         }
     }
@@ -90,7 +90,7 @@ public class Dwarf : ICharacter
         if (inventory.Contains(item))
         {
             int ActualDefense = 0;
-            ActualDefense += item.defenseLevel;
+            ActualDefense += item.GetDefense();
             defenseLevel = ActualDefense;
             Console.WriteLine($"{name} ha activado su defensa");
         }
@@ -110,7 +110,7 @@ public class Dwarf : ICharacter
         Console.WriteLine($"Tiene actualmente {defenseLevel} de defensa");
         foreach (IItem item in inventory)
         {
-            Console.WriteLine($"Tiene a su disposición el item: {item.name}");
+            Console.WriteLine($"Tiene a su disposición el item: {item.GetName()}");
         }
         Console.WriteLine("");
     }
