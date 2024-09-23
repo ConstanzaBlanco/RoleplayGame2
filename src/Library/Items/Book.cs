@@ -1,14 +1,15 @@
 ﻿namespace Ucu.Poo.RoleplayGame;
 
-public class Book : IItem
+public class Book : IItem, IBook
 {
     public string Name { get; }
-    public int DefenseLevel { get; set; }
+    public int DefenseLevel 
+    { get; set; }
     public int AttackLevel { get; set; }
     public int HealthLevel { get; }
     public bool IsMagic { get; }
     
-    private List<string> Spells = new List<string>();
+    public List<String> Spells { get; }
     
     public Book(string name)
     {
@@ -17,6 +18,8 @@ public class Book : IItem
         this.DefenseLevel = 5;
         this.HealthLevel = 0;
         this.AttackLevel = 15;
+        this.Spells = new List<string>();
+
     }
 
     public int GetAttack()

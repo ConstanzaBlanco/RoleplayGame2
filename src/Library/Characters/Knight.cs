@@ -118,8 +118,4 @@ public class Knight : ICharacter
 
         Console.WriteLine("");
     }
-    public void Heal (IItem item)
-    {
-        throw new NotImplementedException();
-    }
 }

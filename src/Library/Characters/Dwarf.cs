@@ -114,9 +114,4 @@ public class Dwarf : ICharacter
         }
         Console.WriteLine("");
     }
-
-    public void Heal(IItem item)
-    {
-        throw new NotImplementedException();
-    }
 }

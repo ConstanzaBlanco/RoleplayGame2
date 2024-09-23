@@ -1,6 +1,6 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Bow:IItem
+public class Bow : IItem
 {
     public string Name { get; }
     public int DefenseLevel { get; }
@@ -21,10 +21,5 @@ public class Bow:IItem
         this.DefenseLevel = 0;
         this.HealthLevel = 0;
         this.IsMagic = false;
-    }
-
-    public void AddSpell(string missing_name)
-    {
-        throw new NotImplementedException();
     }
 }

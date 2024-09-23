@@ -2,7 +2,7 @@ using Ucu.Poo.RoleplayGame;
 
 namespace RoleplayGame2;
 
-public class Wizard : ICharacter
+public class Wizard : ICharacter, IMagic
 {
     public string name { get; set; }
     
@@ -15,6 +15,7 @@ public class Wizard : ICharacter
     public bool IsAlive { get; set; }
     
     public List<IItem> Inventory { get; set; }
+    public List<IBook> Books { get; set; }
 
     public Wizard(string name)
     {
@@ -30,6 +31,10 @@ public class Wizard : ICharacter
     public void AddItem(IItem item)
     {
         Inventory.Add(item);
+    }
+    public void AddBook(IBook item)
+    {
+        Books.Add(item);
     }
     
     public void RemoveItem(IItem item)
@@ -106,7 +111,72 @@ public class Wizard : ICharacter
             HealthLevel = 120;
         }
     }
+    public void Attack(IBook item, ICharacter defender)
+    {
+        int ActualAttack = item.AttackLevel;
+        if (ActualAttack == 0)
+        {
+            ActualAttack = AttackLevel;
+        }
+        if (this == defender)
+        {
+            Console.WriteLine($"No es posible que {name} se ataque a si mismo");
+        }
+        else
+        {
+            if (Books.Contains(item))
+            {
+                if (defender.DefenseLevel + defender.HealthLevel <= ActualAttack)
+                {
+                    defender.DefenseLevel = 0;
+                    defender.HealthLevel = 0;
+                    defender.IsAlive = false;
+                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.Name}"); // aca falta sacar el nombre
+                    Console.WriteLine($"{defender.name} ha muerto por {name}");
+                }
+                else if (defender.DefenseLevel <= ActualAttack)
+                {
+                    defender.HealthLevel -= ActualAttack - defender.DefenseLevel;
+                    defender.DefenseLevel = 0;
+                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.Name}, perdiendo totalmente su defensa"); 
+                }
+                else if (defender.DefenseLevel > ActualAttack)
+                {
+                    defender.DefenseLevel -= AttackLevel;
+                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.Name},pero su defensa no se ha roto");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"{name} no tiene el item {item.Name}, pero golpea con su punio");
+            }
+        }
+    }
 
+    public void Defense(IBook item)
+    {
+        if (Books.Contains(item))
+        {
+            int ActualDefense = 0;
+            ActualDefense += item.DefenseLevel;
+            DefenseLevel = ActualDefense;
+            Console.WriteLine($"{name} ha activado su defensa");
+        }
+        else
+        {
+            Console.WriteLine($"{name} no tiene este item");
+        }
+    }
+
+    public void Heal(IBook item)
+    {
+        int ActualHeal = item.HealthLevel;
+        HealthLevel += ActualHeal;
+        if (HealthLevel > 120)
+        {
+            HealthLevel = 120;
+        }
+    }
     public void PrintStatus()
     {
         Console.WriteLine($"El personaje {name} tiene las siguientes caracteristicas:");
@@ -117,6 +187,10 @@ public class Wizard : ICharacter
         foreach (IItem item in Inventory)
         {
             Console.WriteLine($"Tiene a su disposición el item: {item.Name}");
+        }
+        foreach (IBook book in Books)
+        {
+            Console.WriteLine($"Tiene a su disposición el libro: {book.Name}");
         }
         Console.WriteLine("");
     }

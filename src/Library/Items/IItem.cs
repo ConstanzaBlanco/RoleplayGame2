@@ -7,6 +7,4 @@ public interface IItem
     int AttackLevel { get; }
     int HealthLevel { get; }
     bool IsMagic { get; }
-
-    void AddSpell(string name);
 }

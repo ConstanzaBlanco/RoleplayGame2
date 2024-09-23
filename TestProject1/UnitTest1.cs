@@ -51,7 +51,7 @@ namespace TestProject1
         {
             // Inicialización de personajes
             ICharacter elfo1 = new Dwarf("Zelda"); // Vida inicial: 120
-            ICharacter mago1 = new Wizard("Voldemort"); // Vida inicial: 80
+            Wizard mago1 = new Wizard("Voldemort"); // Vida inicial: 80
             IItem espada = new Sword("Zenith"); 
             IItem pocion = new Potion("Curativa"); 
             IItem baston = new Staff("Báculo");
@@ -70,7 +70,7 @@ namespace TestProject1
         [Test]
         public void CurarMaximoTest()
         {
-            ICharacter mago1 = new Wizard("Voldemort"); // Vida inicial: 80
+            Wizard mago1 = new Wizard("Voldemort"); // Vida inicial: 80
             Potion pocion = new Potion("Curativa"); 
             mago1.AddItem(pocion);
 

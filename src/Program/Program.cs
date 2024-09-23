@@ -1,16 +1,16 @@
 ﻿using RoleplayGame2;
 using Ucu.Poo.RoleplayGame;
 
-IItem LibritoDeSabiduria = new Book("Todo lo sabe");
+IBook LibritoDeSabiduria = new Book("Todo lo sabe");
 LibritoDeSabiduria.AddSpell("Adaba cadabra");
 
 Wizard gandalf = new Wizard("Gandalf");
-//gandalf.Staff = new Staff();
-gandalf.AddItem(LibritoDeSabiduria);
+IItem baston = new Staff("Bastón de chocolate");
+gandalf.AddBook(LibritoDeSabiduria);
+gandalf.AddItem(baston);
 gandalf.PrintStatus();
 
 Dwarf gimli = new Dwarf("Gimli");
-gimli.AddItem(LibritoDeSabiduria);
 IItem EscudoDeHierro = new Shield("Hierro");
 gimli.AddItem(EscudoDeHierro);
 gimli.PrintStatus();

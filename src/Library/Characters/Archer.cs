@@ -45,7 +45,7 @@ public class Archer : ICharacter
 
     public void Attack(IItem item, ICharacter defender)
     {
-        int ActualAttack = item.AttackLevel;
+        int ActualAttack = item.AttackLevel; //ACA VA EL GETATTACK
         if (ActualAttack == 0)
         {
             ActualAttack = AttackLevel;
@@ -113,10 +113,5 @@ public class Archer : ICharacter
             Console.WriteLine($"Tiene a su disposición el item: {item.Name}");
         }
         Console.WriteLine("");
-    }
-
-    public void Heal(IItem item)
-    {
-        throw new NotImplementedException();
     }
 }
