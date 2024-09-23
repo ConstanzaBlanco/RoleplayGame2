@@ -3,7 +3,15 @@ namespace Ucu.Poo.RoleplayGame;
 public class Sword:IItem
 {
     public string Name { get; }
-    public int DefenseLevel { get; }
+
+    public int DefenseLevel
+    {
+        get
+        {
+            return 15;
+        }
+    }
+
     public int AttackLevel
     {
         get
@@ -17,7 +25,6 @@ public class Sword:IItem
     public Sword(string name)
     {
         this.Name = name;
-        this.DefenseLevel = 0;
         this.HealthLevel = 0;
         this.IsMagic = false;
     }

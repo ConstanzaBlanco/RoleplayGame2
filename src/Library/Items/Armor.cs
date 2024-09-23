@@ -1,9 +1,12 @@
+using RoleplayGame2;
+
 namespace Ucu.Poo.RoleplayGame;
 
 public class armor: IItem
 {
     public string Name { get; }
-
+    private int usos;
+    private int proteccion;
     public int DefenseLevel
     {
         get
@@ -27,5 +30,21 @@ public class armor: IItem
     public void AddSpell(string missing_name)
     {
         throw new NotImplementedException();
+    }
+    
+    public int GetDefensa(ICharacter name)
+    {
+        if (this.usos <= 2)
+        {
+            this.proteccion -= 20;
+            this.usos += 1;
+        }
+
+        if (this.proteccion <= 0)
+        {
+            Console.WriteLine($"A {this.Name} se le ha roto la Armadura");
+            this.proteccion = 0;
+        }
+        return this.proteccion;
     }
 }
