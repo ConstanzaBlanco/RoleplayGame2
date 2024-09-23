@@ -1,5 +1,5 @@
 ﻿namespace Ucu.Poo.RoleplayGame;
-
+//El libro implementa ambas interfeces para poder tener las caracteristicas de un libro y de un item
 public class Book : IItem, IBook
 {
     private string name;
@@ -15,7 +15,7 @@ public class Book : IItem, IBook
         this.name = name;
         this.IsMagic = true;
         this.DefenseLevel = 5;
-        this.HealthLevel = 0;
+        this.HealthLevel = 5;
         this.AttackLevel = 15;
         this.Spells = new List<string>();
 
@@ -45,11 +45,14 @@ public class Book : IItem, IBook
 
     public int GetHealth()
     {
+        int cant_spells = Spells.Count;
+        this.HealthLevel += cant_spells;
         return this.HealthLevel;
     }
     
     public bool GetIsMagic()
     {
+        
         return this.IsMagic;
     }
 }

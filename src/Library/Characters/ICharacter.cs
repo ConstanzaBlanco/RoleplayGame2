@@ -1,7 +1,7 @@
 ﻿using Ucu.Poo.RoleplayGame;
 
 namespace RoleplayGame2;
-
+//Esta interfaz estable que comportamiento debe tener cada personaje creado
 
 public interface ICharacter
 { 

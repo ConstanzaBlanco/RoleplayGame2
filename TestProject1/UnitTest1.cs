@@ -60,9 +60,9 @@ namespace TestProject1
             elfo1.AddItem(espada);
             
             // Simula una curación
-            elfo1.Attack(espada,mago1); //Hace 15 de daño al mago, por lo que este quedaría con 65 de vida
+            elfo1.Attack(espada,mago1); //Hace 25 de daño al mago (10 rompiendo su escudo y otros 15 son restados a su salud) , por lo que este quedaría con 65 de vida
             mago1.Heal(pocion);
-            int VidaEsperada = 95; //Se cura 30 puntos, quedando con 95
+            int VidaEsperada = 95; //Se cura 30 puntos de salud cuando posee 65 puntos de salud, quedando con 95
             int VidaReal = mago1.GetHealth();
             Assert.AreEqual(VidaEsperada,VidaReal);
         }
@@ -80,7 +80,6 @@ namespace TestProject1
             int VidaEsperada = 120;
             int VidaReal = mago1.GetHealth();
             Assert.AreEqual(VidaEsperada,VidaReal);
-
         }
     }
     

@@ -11,7 +11,7 @@ public class Sword : IItem
     public Sword(string name)
     {
         this.name = name;
-        this.IsMagic = true;
+        this.IsMagic = false;
         this.DefenseLevel = 15;
         this.HealthLevel = 0;
         this.AttackLevel = 25;

@@ -157,6 +157,7 @@ public class Wizard : ICharacter, IMagic
             SetHealth(120);
         }
     }
+    //Decidimos aplicar el concepto de sobrecarga agregando métodos para atacar,defender y curar ya sea con el libro o con otro tipo de item 
     public void Attack(IBook item, ICharacter defender)
     {
         int ActualAttack = item.GetAttack();

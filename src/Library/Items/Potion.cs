@@ -13,8 +13,8 @@ public class Potion : IItem
         this.name = name;
         this.IsMagic = true;
         this.DefenseLevel = 0;
-        this.HealthLevel = 0;
-        this.AttackLevel = 30;
+        this.HealthLevel = 30;
+        this.AttackLevel = 0;
     }
 
     public int GetAttack()

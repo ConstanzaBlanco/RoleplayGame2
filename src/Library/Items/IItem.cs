@@ -1,5 +1,5 @@
 ﻿namespace Ucu.Poo.RoleplayGame;
-
+//Establece que comportamiento debe tener cada item
 public interface IItem
 {
     int GetAttack();

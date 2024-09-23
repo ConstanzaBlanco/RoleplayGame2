@@ -11,7 +11,7 @@ public class Shield : IItem
     public Shield(string name)
     {
         this.name = name;
-        this.IsMagic = true;
+        this.IsMagic = false;
         this.DefenseLevel = 30;
         this.HealthLevel = 0;
         this.AttackLevel = 0;
