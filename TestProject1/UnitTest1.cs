@@ -23,7 +23,7 @@ namespace TestProject1
             // Simula un ataque
             mago1.Attack(baston, caballero1);
             int vidaEsperada = 80; 
-            int vidaReal = caballero1.HealthLevel;
+            int vidaReal = caballero1.GetHealth();
             Assert.AreEqual(vidaEsperada, vidaReal);
         }
 
@@ -43,7 +43,7 @@ namespace TestProject1
             arquero1.Defense(escudo);
             mago1.Attack(baston, arquero1);
             int vidaEsperada = 110; //Tiene la misma vida puesto que su defensa es mayor al ataque recibido 
-            int vidaReal = arquero1.HealthLevel;
+            int vidaReal = arquero1.GetHealth();
             Assert.AreEqual(vidaEsperada, vidaReal);
         }
         [Test]
@@ -60,10 +60,10 @@ namespace TestProject1
             elfo1.AddItem(espada);
             
             // Simula una curación
-            elfo1.Attack(espada,mago1); //Hace 15 de daño al mago, por lo que este quedaría con 70 de vida
+            elfo1.Attack(espada,mago1); //Hace 15 de daño al mago, por lo que este quedaría con 65 de vida
             mago1.Heal(pocion);
             int VidaEsperada = 95; //Se cura 30 puntos, quedando con 95
-            int VidaReal = mago1.HealthLevel;
+            int VidaReal = mago1.GetHealth();
             Assert.AreEqual(VidaEsperada,VidaReal);
         }
 
@@ -78,7 +78,7 @@ namespace TestProject1
             mago1.Heal(pocion); //pasaría a tener 110 de vida
             mago1.Heal(pocion);
             int VidaEsperada = 120;
-            int VidaReal = mago1.HealthLevel;
+            int VidaReal = mago1.GetHealth();
             Assert.AreEqual(VidaEsperada,VidaReal);
 
         }

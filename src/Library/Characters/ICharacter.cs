@@ -4,13 +4,17 @@ namespace RoleplayGame2;
 
 
 public interface ICharacter
-{
-    string name { get; set; }
-    int healthLevel { get; set; }
-    int attackLevel { get; set; }
-    int defenseLevel { get; set; }
-    bool isAlive { get; set; }
-    List<IItem> inventory { get; set; }
+{ 
+    string GetName();
+    int GetHealth();
+    void SetHealth(int value);
+    int GetAttack();
+    int GetDefense();
+    void SetDefense(int value);
+    bool GetIsAlive();
+    void SetIsAlive(bool value);
+    List<IItem> GetInventory();
+    
     void AddItem(IItem item);
     void RemoveItem(IItem item);
     void Attack(IItem item, ICharacter defender);
