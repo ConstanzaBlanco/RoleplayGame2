@@ -6,49 +6,49 @@ public class Archer : ICharacter
 {
     public string name { get; set; }
     
-    public int HealthLevel { get; set; }
+    public int healthLevel { get; set; }
     
-    public int AttackLevel { get; set; }
+    public int attackLevel { get; set; }
     
-    public int DefenseLevel { get; set; }
+    public int defenseLevel { get; set; }
     
-    public bool IsAlive { get; set; }
+    public bool isAlive { get; set; }
     
-    public List<IItem> Inventory { get; set; }
+    public List<IItem> inventory { get; set; }
 
     public Archer(string name)
     {
         this.name = name;
-        this.HealthLevel = 110;
-        this.DefenseLevel = 20;
-        this.AttackLevel = 10;
-        this.IsAlive = true;
-        this.Inventory = new List<IItem>();
+        this.healthLevel = 110;
+        this.defenseLevel = 20;
+        this.attackLevel = 10;
+        this.isAlive = true;
+        this.inventory = new List<IItem>();
     }
     
 
     public void AddItem(IItem item)
     {
-        if (!item.IsMagic)
+        if (!item.isMagic)
         {
-            Inventory.Add(item);
+            inventory.Add(item);
         }
     }
     
     public void RemoveItem(IItem item)
     {
-        if (Inventory.Contains(item))
+        if (inventory.Contains(item))
         {
-            Inventory.Remove(item);
+            inventory.Remove(item);
         }
     }
 
     public void Attack(IItem item, ICharacter defender)
     {
-        int ActualAttack = item.AttackLevel; //ACA VA EL GETATTACK
+        int ActualAttack = item.attackLevel; //ACA VA EL GETATTACK
         if (ActualAttack == 0)
         {
-            ActualAttack = AttackLevel;
+            ActualAttack = attackLevel;
         }
         if (this == defender)
         {
@@ -56,42 +56,42 @@ public class Archer : ICharacter
         }
         else
         {
-            if (Inventory.Contains(item))
+            if (inventory.Contains(item))
             {
-                if (defender.DefenseLevel + defender.HealthLevel <= ActualAttack)
+                if (defender.defenseLevel + defender.healthLevel <= ActualAttack)
                 {
-                    defender.DefenseLevel = 0;
-                    defender.HealthLevel = 0;
-                    defender.IsAlive = false;
-                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.Name}"); // aca falta sacar el nombre
+                    defender.defenseLevel = 0;
+                    defender.healthLevel = 0;
+                    defender.isAlive = false;
+                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.name}"); // aca falta sacar el nombre
                     Console.WriteLine($"{defender.name} ha muerto por {name}");
                 }
-                else if (defender.DefenseLevel <= ActualAttack)
+                else if (defender.defenseLevel <= ActualAttack)
                 {
-                    defender.HealthLevel -= ActualAttack - defender.DefenseLevel;
-                    defender.DefenseLevel = 0;
-                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.Name}, perdiendo totalmente su defensa"); 
+                    defender.healthLevel -= ActualAttack - defender.defenseLevel;
+                    defender.defenseLevel = 0;
+                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.name}, perdiendo totalmente su defensa"); 
                 }
-                else if (defender.DefenseLevel > ActualAttack)
+                else if (defender.defenseLevel > ActualAttack)
                 {
-                    defender.DefenseLevel -= AttackLevel;
-                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.Name},pero su defensa no se ha roto");
+                    defender.defenseLevel -= attackLevel;
+                    Console.WriteLine($"{defender.name} ha sido atacado por {name} con su {item.name},pero su defensa no se ha roto");
                 }
             }
             else
             {
-                Console.WriteLine($"{name} no tiene el item {item.Name}, pero golpea con su punio");
+                Console.WriteLine($"{name} no tiene el item {item.name}, pero golpea con su punio");
             }
         }
     }
 
     public void Defense(IItem item)
     {
-        if (Inventory.Contains(item))
+        if (inventory.Contains(item))
         {
             int ActualDefense = 0;
-            ActualDefense += item.DefenseLevel;
-            DefenseLevel = ActualDefense;
+            ActualDefense += item.defenseLevel;
+            defenseLevel = ActualDefense;
             Console.WriteLine($"{name} ha activado su defensa");
         }
         else
@@ -105,12 +105,12 @@ public class Archer : ICharacter
     {
         Console.WriteLine($"El personaje {name} tiene las siguientes caracteristicas:");
         Console.WriteLine($"Es de tipo: {this.GetType().Name}");
-        Console.WriteLine($"Tiene actualmente {HealthLevel} de vida");
-        Console.WriteLine($"Tiene actualmente {AttackLevel} de daño físico base");
-        Console.WriteLine($"Tiene actualmente {DefenseLevel} de defensa");
-        foreach (IItem item in Inventory)
+        Console.WriteLine($"Tiene actualmente {healthLevel} de vida");
+        Console.WriteLine($"Tiene actualmente {attackLevel} de daño físico base");
+        Console.WriteLine($"Tiene actualmente {defenseLevel} de defensa");
+        foreach (IItem item in inventory)
         {
-            Console.WriteLine($"Tiene a su disposición el item: {item.Name}");
+            Console.WriteLine($"Tiene a su disposición el item: {item.name}");
         }
         Console.WriteLine("");
     }

@@ -6,11 +6,11 @@ namespace RoleplayGame2;
 public interface ICharacter
 {
     string name { get; set; }
-    int HealthLevel { get; set; }
-    int AttackLevel { get; set; }
-    int DefenseLevel { get; set; }
-    bool IsAlive { get; set; }
-    List<IItem> Inventory { get; set; }
+    int healthLevel { get; set; }
+    int attackLevel { get; set; }
+    int defenseLevel { get; set; }
+    bool isAlive { get; set; }
+    List<IItem> inventory { get; set; }
     void AddItem(IItem item);
     void RemoveItem(IItem item);
     void Attack(IItem item, ICharacter defender);

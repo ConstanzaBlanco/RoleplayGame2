@@ -2,9 +2,9 @@
 
 public interface IItem
 {
-    string Name { get; }
-    int DefenseLevel { get; }
-    int AttackLevel { get; }
-    int HealthLevel { get; }
-    bool IsMagic { get; }
+    string name { get; }
+    int defenseLevel { get; }
+    int attackLevel { get; }
+    int healthLevel { get; }
+    bool isMagic { get; }
 }
